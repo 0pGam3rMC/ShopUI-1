@@ -2,8 +2,8 @@ name: ShopUI
 main: QuiverlyRivalry\QuiverlyRivalry
 version: 1.0.2
 api: [3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10]
-author: QuiverlyRivalry
+author: 0pGam3rMC
 
 commands:
- shopui:
-  description: "Access the UI for Shops!"
+ shop:
+  description: "Regulated Factions Custom Shop! Made by Crafter20162017"
