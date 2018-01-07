@@ -156,7 +156,7 @@ class QuiverlyRivalry extends PluginBase implements Listener{
                         $this->itemId = 276;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
                         EconomyAPI::getInstance()->reduceMoney($player, 12500);
-                        $player->sendMessage(TextFormat::GREEN."(!) ".TextFormat::GREEN."You have purchased a diamond sword.");
+                        $player->sendMessage(TextFormat::GREEN."(!) ").TextFormat::GREEN.("You have purchased a diamond sword.");
                     }else{
                         $player->sendMessage("You Don't Have Enough Money.");
                     }
@@ -190,11 +190,11 @@ class QuiverlyRivalry extends PluginBase implements Listener{
         $money = $eco->myMoney($name);
         $form->setContent(TextFormat::GREEN."You Have: " . $money);
         $form->addButton(TextFormat::RED."Back, to main menu!");
-        $form->addButton(TextFormat::GREEN."Wooden Sword: "TextFormat::BLUE." $1000", 0, "textures/items/wood_sword");
-        $form->addButton(TextFormat::GREEN."Stone Sword: "TextFormat::BLUE." $3500", 0, "textures/items/stone_sword");
-        $form->addButton(TextFormat::GREEN."Golden Sword: "TextFormat::BLUE." $7500", 0, "textures/items/gold_sword");
-        $form->addButton(TextFormat::GREEN."Iron Sword: "TextFormat::BLUE." $10000", 0, "textures/items/iron_sword");
-        $form->addButton(TextFormat::GREEN."Diamond Sword: "TextFormat::BLUE." $12500", 0, "textures/items/diamond_sword");
+        $form->addButton(TextFormat::GREEN."Wooden Sword: ".TextFormat::BLUE." $1000", 0, "textures/items/wood_sword");
+        $form->addButton(TextFormat::GREEN."Stone Sword: ".TextFormat::BLUE." $3500", 0, "textures/items/stone_sword");
+        $form->addButton(TextFormat::GREEN."Golden Sword: ".TextFormat::BLUE." $7500", 0, "textures/items/gold_sword");
+        $form->addButton(TextFormat::GREEN."Iron Sword: ".TextFormat::BLUE." $10000", 0, "textures/items/iron_sword");
+        $form->addButton(TextFormat::GREEN."Diamond Sword: ".TextFormat::BLUE." $12500", 0, "textures/items/diamond_sword");
         $form->addButton(TextFormat::GREEN."Bow : $2000", 0, "textures/items/bow_standby");
         $form->addButton(TextFormat::GREEN."Arrows(64x) : $3000", 0, "textures/items/arrow");
         $form->sendToPlayer($player);
