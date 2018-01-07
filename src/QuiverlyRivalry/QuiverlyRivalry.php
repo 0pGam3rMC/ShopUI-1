@@ -28,7 +28,7 @@ class QuiverlyRivalry extends PluginBase implements Listener{
     public $nomoney = TextFormat::RED . "you do not have enough money!";
 
     public function onEnable(){
-        $this->getLogger()->info("ShopUI by Quiverly! Remember I am a developer for hire!");
+        $this->getLogger()->info("ShopUI by 0pGam3rMC! Remember I am a developer for hire!");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         
         foreach(['FormAPI', 'EconomyAPI'] as $plugin){
@@ -41,7 +41,7 @@ class QuiverlyRivalry extends PluginBase implements Listener{
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool{
         $player = $sender->getPlayer();
         switch ($cmd->getName()){
-            case "shopui":
+            case "shop":
                 $this->mainForm($player);
                 break;
         }
@@ -80,18 +80,18 @@ class QuiverlyRivalry extends PluginBase implements Listener{
             }
         });
 
-        $form->setTitle(TextFormat::WHITE . "--= " . TextFormat::BOLD . TextFormat::GREEN . "CastleRaid" . TextFormat::RESET . TextFormat::WHITE . " =--");
+        $form->setTitle(TextFormat::WHITE . "--= " . TextFormat::BOLD . TextFormat::BLUE . "RegulatedFactions Shop" . TextFormat::RESET . TextFormat::WHITE . " =--");
         $name = $player->getName();
         $eco = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
         $money = $eco->myMoney($name);
         $form->setContent("Your Money: " . $money);
-        $form->addButton(TextFormat::GREEN."Exit");
-        $form->addButton(TextFormat::WHITE."Weapons");
-        $form->addButton(TextFormat::WHITE."Tools");
-        $form->addButton(TextFormat::WHITE."Armour");
-        $form->addButton(TextFormat::WHITE."Blocks");
-        $form->addButton(TextFormat::WHITE."Special Items");
-        $form->addButton(TextFormat::WHITE."Masks");
+        $form->addButton(TextFormat::RED."Exit");
+        $form->addButton(TextFormat::BLUE."Weapons");
+        $form->addButton(TextFormat::PINK."Tools");
+        $form->addButton(TextFormat::ORANGE."Armour");
+        $form->addButton(TextFormat::GREEN."Blocks");
+        $form->addButton(TextFormat::PURPLE."Special Items");
+        $form->addButton(TextFormat::LIGHT_BLUE."Masks");
         $form->sendToPlayer($player);
     }
 
@@ -108,51 +108,55 @@ class QuiverlyRivalry extends PluginBase implements Listener{
                     break;
                 case 1:
                     $money = EconomyAPI::getInstance()->myMoney($player->getName());
-                    if ($money >= 2500) {
+                    if ($money >= 1000) {
                         $this->itemId = 268;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
-                        EconomyAPI::getInstance()->reduceMoney($player, 2500);
-                        $player->sendMessage("You bought a Wood Sword");
+                        EconomyAPI::getInstance()->reduceMoney($player, 1000);
+                        $player->sendMessage(TextFormat::RED."(!) ".TextFormat::GREEN.("You have successfully purchased a Wooden Sword!");
                     }else{
-                        $player->sendMessage("You Don't Have Enough Money.");
+                        $player->sendMessage(TextFormat::RED."You Don't Have Enough Money to purchase a Wooden Sword... YOUR BROKE!";
                     }
                     break;
                 case 2:
                     $money = EconomyAPI::getInstance()->myMoney($player->getName());
-                    if ($money >= 5000) {
+                    if ($money >= 3500) {
                         $this->itemId = 272;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
-                        EconomyAPI::getInstance()->reduceMoney($player, 5000);
+                        EconomyAPI::getInstance()->reduceMoney($player, 3500);
+                        $player->sendMessage(TextFormat::RED.("! ").TextFormat::GREEN.("You have successfully purchased a Stone Sword!");
                     }else{
-                        $player->sendMessage("You Don't Have Enough Money.");
+                        $player->sendMessage(TextFormat::RED.("! ").TextFormat::RED.("You Don't Have Enough Money.");
                     }
                     break;
                 case 3:
                     $money = EconomyAPI::getInstance()->myMoney($player->getName());
-                    if ($money >= 10000) {
+                    if ($money >= 7500) {
                         $this->itemId = 267;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
-                        EconomyAPI::getInstance()->reduceMoney($player, 10000);
+                        EconomyAPI::getInstance()->reduceMoney($player, 7500);
+                        $player->sendMessage(TextFormat::GREEN.("(!) ").TextFormat::GREEN.("You have successfully purchased a Iron Sword!");
                     }else{
-                        $player->sendMessage("You Don't Have Enough Money.");
+                        $player->sendMessage(TextFormat::RED.("(!) ").TextFormat::RED.("You Don't Have Enough Money to buy a Iron sword :/.");
                     }
                     break;
                 case 4:
                     $money = EconomyAPI::getInstance()->myMoney($player->getName());
-                    if ($money >= 15000) {
+                    if ($money >= 10000) {
                         $this->itemId = 283;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
-                        EconomyAPI::getInstance()->reduceMoney($player, 15000);
+                        EconomyAPI::getInstance()->reduceMoney($player, 10000);
+                        $player->sendMessage(TextFormat::GREEN.("(!) ").TextFormat::GREEN.("You have successfully purchased a Gold Sword!");
                     }else{
-                        $player->sendMessage("You Don't Have Enough Money.");
+                        $player->sendMessage(TextFormat::RED.("You Don't Have Enough Money.");
                     }
                     break;
                 case 5:
                     $money = EconomyAPI::getInstance()->myMoney($player->getName());
-                    if ($money >= 25000) {
+                    if ($money >= 12500) {
                         $this->itemId = 276;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
-                        EconomyAPI::getInstance()->reduceMoney($player, 25000);
+                        EconomyAPI::getInstance()->reduceMoney($player, 12500);
+                        $player->sendMessage(TextFormat::GREEN."(!)".TextFormat::GREEN."You have purchased a diamond sword.");
                     }else{
                         $player->sendMessage("You Don't Have Enough Money.");
                     }
@@ -180,19 +184,19 @@ class QuiverlyRivalry extends PluginBase implements Listener{
             }
         });
 
-        $form->setTitle("Weapons");
+        $form->setTitle(TextFormat::BOLD.TextFormat::BLUE."Weapons");
         $name = $player->getName();
         $eco = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
         $money = $eco->myMoney($name);
-        $form->setContent("Your Money: " . $money);
-        $form->addButton("Back, to main menu!");
-        $form->addButton("Wooden Sword: $2500", 0, "textures/items/wood_sword");
-        $form->addButton("Stone Sword : $5000", 0, "textures/items/stone_sword");
-        $form->addButton("Golden Sword : $10000", 0, "textures/items/gold_sword");
-        $form->addButton("Iron Sword : $15000", 0, "textures/items/iron_sword");
-        $form->addButton("Diamond Sword : $25000", 0, "textures/items/diamond_sword");
-        $form->addButton("Bow : $2000", 0, "textures/items/bow_standby");
-        $form->addButton("Arrows(64x) : $3000", 0, "textures/items/arrow");
+        $form->setContent(TextFormat::GREEN."You Have: " . $money);
+        $form->addButton(TextFormat::RED."Back, to main menu!");
+        $form->addButton(TextFormat::GREEN."Wooden Sword:"TextFormat::BLUE." $1000", 0, "textures/items/wood_sword");
+        $form->addButton(TextFormat::GREEN."Stone Sword:"TextFormat::BLUE." $3500", 0, "textures/items/stone_sword");
+        $form->addButton(TextFormat::GREEN."Golden Sword:"TextFormat::BLUE." $7500", 0, "textures/items/gold_sword");
+        $form->addButton(TextFormat::GREEN."Iron Sword:"TextFormat::BLUE." $10000", 0, "textures/items/iron_sword");
+        $form->addButton(TextFormat::GREEN."Diamond Sword:"TextFormat::BLUE." $12500", 0, "textures/items/diamond_sword");
+        $form->addButton(TextFormat::GREEN."Bow : $2000", 0, "textures/items/bow_standby");
+        $form->addButton(TextFormat::GREEN."Arrows(64x) : $3000", 0, "textures/items/arrow");
         $form->sendToPlayer($player);
     }
 
