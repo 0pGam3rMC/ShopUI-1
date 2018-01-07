@@ -112,7 +112,7 @@ class QuiverlyRivalry extends PluginBase implements Listener{
                         $this->itemId = 268;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
                         EconomyAPI::getInstance()->reduceMoney($player, 1000);
-                        $player->sendMessage(TextFormat::RED."(!) ").TextFormat::GREEN.("You have successfully purchased a Wooden Sword!");
+                        $player->sendMessage(TextFormat::RED."(!) ".TextFormat::GREEN."You have successfully purchased a Wooden Sword!");
                     }else{
                         $player->sendMessage(TextFormat::RED."You Don't Have Enough Money to purchase a Wooden Sword... YOUR BROKE!");
                     }
@@ -123,9 +123,9 @@ class QuiverlyRivalry extends PluginBase implements Listener{
                         $this->itemId = 272;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
                         EconomyAPI::getInstance()->reduceMoney($player, 3500);
-                        $player->sendMessage(TextFormat::RED."(!) ").TextFormat::GREEN.("You have successfully purchased a Stone Sword!");
+                        $player->sendMessage(TextFormat::RED."(!) ".TextFormat::GREEN."You have successfully purchased a Stone Sword!");
                     }else{
-                        $player->sendMessage(TextFormat::RED."(!) ").TextFormat::RED.("You Don't Have Enough Money.");
+                        $player->sendMessage(TextFormat::RED."(!) ".TextFormat::RED."You Don't Have Enough Money.");
                     }
                     break;
                 case 3:
@@ -134,9 +134,9 @@ class QuiverlyRivalry extends PluginBase implements Listener{
                         $this->itemId = 267;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
                         EconomyAPI::getInstance()->reduceMoney($player, 7500);
-                        $player->sendMessage(TextFormat::GREEN."(!) ").TextFormat::GREEN.("You have successfully purchased a Iron Sword!");
+                        $player->sendMessage(TextFormat::GREEN."(!) ".TextFormat::GREEN."You have successfully purchased a Iron Sword!");
                     }else{
-                        $player->sendMessage(TextFormat::RED."(!) ").TextFormat::RED.("You Don't Have Enough Money to buy a Iron sword :/.");
+                        $player->sendMessage(TextFormat::RED."(!) ".TextFormat::RED."You Don't Have Enough Money to buy a Iron sword :/.");
                     }
                     break;
                 case 4:
@@ -145,7 +145,7 @@ class QuiverlyRivalry extends PluginBase implements Listener{
                         $this->itemId = 283;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
                         EconomyAPI::getInstance()->reduceMoney($player, 10000);
-                        $player->sendMessage(TextFormat::GREEN."(!) ").TextFormat::GREEN.("You have successfully purchased a Gold Sword!");
+                        $player->sendMessage(TextFormat::GREEN."(!) ".TextFormat::GREEN."You have successfully purchased a Gold Sword!");
                     }else{
                         $player->sendMessage(TextFormat::RED."You Don't Have Enough Money.");
                     }
@@ -156,7 +156,7 @@ class QuiverlyRivalry extends PluginBase implements Listener{
                         $this->itemId = 276;
                         $player->getInventory()->addItem(Item::get($this->itemId, 0, 1));
                         EconomyAPI::getInstance()->reduceMoney($player, 12500);
-                        $player->sendMessage(TextFormat::GREEN."(!) ").TextFormat::GREEN.("You have purchased a diamond sword.");
+                        $player->sendMessage(TextFormat::GREEN."(!) ".TextFormat::GREEN."You have purchased a diamond sword.");
                     }else{
                         $player->sendMessage("You Don't Have Enough Money.");
                     }
