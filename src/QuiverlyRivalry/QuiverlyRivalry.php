@@ -87,10 +87,10 @@ class QuiverlyRivalry extends PluginBase implements Listener{
         $form->setContent("Your Money: " . $money);
         $form->addButton(TextFormat::RED."Exit");
         $form->addButton(TextFormat::BLUE."Weapons");
-        $form->addButton(TextFormat::WHITE."Tools");
+        $form->addButton(TextFormat::GREEN."Tools");
         $form->addButton(TextFormat::BLUE."Armour");
         $form->addButton(TextFormat::GREEN."Blocks");
-        $form->addButton(TextFormat::PURPLE."Special Items");
+        $form->addButton(TextFormat::BLUE."Special Items");
         $form->addButton(TextFormat::GREEN."Masks");
         $form->sendToPlayer($player);
     }
